@@ -17,11 +17,11 @@ def get_db():
 @app.post("/blog")
 def create(request:schemas.Blog,db:Session=Depends(get_db)):
     
-    new_blog=models.Blog(title=request.title,body=request.body)
+    new-blog=models.Blog(title=request.title,body=request.body)
     db.add(new_blog)
     db.commit()
     db.refresh(new_blog)
-    return new_blog
+    return new-blog
 
 @app.get("/blog")
 def get_blogs(db:Session=Depends(get_db)):
